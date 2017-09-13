@@ -15,9 +15,9 @@ MonoBehaviour:
   clientTokens:
   - 
   appIds:
-  - 157578437735213
+  - 147477582512463
   appLabels:
-  - App Name
+  - Commute Rush
   cookie: 1
   logging: 1
   status: 1
