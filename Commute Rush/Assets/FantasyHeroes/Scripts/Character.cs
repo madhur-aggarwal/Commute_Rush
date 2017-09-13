@@ -109,7 +109,7 @@ namespace Assets.FantasyHeroes.Scripts
 
             var layout = part.GetComponent<SpriteLayout>();
 
-            part.sprite = SpriteSlicer.Slice(texture, layout);
+            //part.sprite = SpriteSlicer.Slice(texture, layout);
         }
 
         private static void ReplaceTexture(IEnumerable<SpriteRenderer> parts, Texture2D texture)
