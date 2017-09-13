@@ -37,10 +37,12 @@ public class PlayerControl : MonoBehaviour {
         if (collision.gameObject.tag == "Obstacle")
         {
             currentJump = 0;
-        }else if (collision.gameObject.tag == "DeathZone")
+        }
+        else if (collision.gameObject.tag == "DeathZone")
         {
             gm.GameOver();
         }
+             
     }
 
 }
