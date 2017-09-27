@@ -9,6 +9,7 @@ public class GameManager :MonoBehaviour {
 
     private int score = 0;
     private int stamina = 100;
+    private bool isGameOver = false;
 
 	// Use this for initialization
 	void Start () {
@@ -17,6 +18,7 @@ public class GameManager :MonoBehaviour {
         {
             Debug.Log("Failed to load UI Manager in GameManager");
         }
+        StartCoroutine(GetTired(0.1f));
 	}
 	
 	// Update is called once per frame
@@ -40,8 +42,18 @@ public class GameManager :MonoBehaviour {
         }
     }
 
+    IEnumerator GetTired(float interval)
+    {
+        while (!isGameOver)
+        {
+            AddStamina(-1);
+            yield return new WaitForSeconds(interval);
+        }
+    }
+
     public void GameOver()
     {
+        isGameOver = true;
         ui.ShowGameOver();
 
     }

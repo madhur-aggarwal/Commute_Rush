@@ -38,12 +38,14 @@ public class PlayerControl : MonoBehaviour {
         }
 
 
-        //float horizontalAxis = Input.GetAxis("Horizontal");
-        float verticalAxis = Input.GetAxis("Vertical");
 
-        //transform.Translate(Time.deltaTime * horizontalAxis * 5, 0, 0);
-        //Vertical movement is just for debugging
+        //Unrestricted movement for debugging
+        /*
+        float horizontalAxis = Input.GetAxis("Horizontal");
+        transform.Translate(Time.deltaTime * horizontalAxis * 5, 0, 0);
+        float verticalAxis = Input.GetAxis("Vertical");
         transform.Translate(0, Time.deltaTime * verticalAxis * 5, 0);
+        */
     }
 
 

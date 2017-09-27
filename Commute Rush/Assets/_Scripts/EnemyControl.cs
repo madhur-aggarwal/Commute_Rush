@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyControl : MonoBehaviour {
     public float speed = 1.0f;
-    public int damage = 5;
+    public int damage = 10;
 
     // Use this for initialization
     void Start () {
