@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour {
 
     public Text scoreLabel;
+    public Slider staminaSlider;
     public Text gameOverLabel;
     public Button retryButton;
 
@@ -29,9 +30,17 @@ public class UIManager : MonoBehaviour {
         scoreLabel.text = scoreText + score;
     }
 
+    public void SetStaminaSlider(int stamina)
+    {
+        float sliderPercent = (float)stamina / 100;
+        staminaSlider.value = sliderPercent;
+    }
+
     public void ShowGameOver()
     {
         gameOverLabel.gameObject.SetActive(true);
         retryButton.gameObject.SetActive(true);
     }
+
+    
 }
