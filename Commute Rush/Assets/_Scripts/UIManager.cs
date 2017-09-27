@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         scoreLabel.text = scoreText + 0;
+        staminaSlider.value = 1;
         gameOverLabel.gameObject.SetActive(false);
         retryButton.gameObject.SetActive(false);
         

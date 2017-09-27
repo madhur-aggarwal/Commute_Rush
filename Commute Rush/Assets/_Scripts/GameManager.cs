@@ -8,13 +8,14 @@ public class GameManager :MonoBehaviour {
     private UIManager ui;
 
     private int score = 0;
+    private int stamina = 100;
 
 	// Use this for initialization
 	void Start () {
         ui = FindObjectOfType<UIManager>();
         if (!ui)
         {
-            Debug.Log("Failed to load UI Manager");
+            Debug.Log("Failed to load UI Manager in GameManager");
         }
 	}
 	
@@ -27,6 +28,12 @@ public class GameManager :MonoBehaviour {
     {
         score += increment;
         ui.UpdateScore(score);
+    }
+
+    public void AddStamina(int increment)
+    {
+        stamina += increment;
+        ui.SetStaminaSlider(stamina);
     }
 
     public void GameOver()
