@@ -6,7 +6,7 @@ public class PlayerControl : MonoBehaviour {
     private GameManager gm;
 
     public float jumpForce = 300;
-
+    private int pos = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -19,14 +19,33 @@ public class PlayerControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float horizontalAxis = Input.GetAxis("Horizontal");
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            if (pos > -2)
+            {
+                transform.Translate(-0.65f, 0, 0);
+                pos = pos - 1;
+            }
+            
+        }else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            if (pos < 2)
+            {
+                transform.Translate(0.65f, 0, 0);
+                pos = pos + 1;
+            }
+            
+        }
+
+
+        //float horizontalAxis = Input.GetAxis("Horizontal");
         float verticalAxis = Input.GetAxis("Vertical");
 
-        transform.Translate(Time.deltaTime * horizontalAxis * 5, 0, 0);
+        //transform.Translate(Time.deltaTime * horizontalAxis * 5, 0, 0);
         //Vertical movement is just for debugging
         transform.Translate(0, Time.deltaTime * verticalAxis * 5, 0);
-
     }
+
 
     void OnCollisionEnter2D(Collision2D collision)
     {
