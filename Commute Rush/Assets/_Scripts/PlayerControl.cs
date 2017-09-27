@@ -30,7 +30,6 @@ public class PlayerControl : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collide");
 
         string otherTag = collision.gameObject.tag;
         if (otherTag == "Enemy")
