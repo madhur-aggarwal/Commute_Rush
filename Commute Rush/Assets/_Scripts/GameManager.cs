@@ -34,6 +34,10 @@ public class GameManager :MonoBehaviour {
     {
         stamina += increment;
         ui.SetStaminaSlider(stamina);
+        if (stamina <= 0)
+        {
+            GameOver();
+        }
     }
 
     public void GameOver()

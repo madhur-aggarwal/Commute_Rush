@@ -19,19 +19,25 @@ public class PlayerControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            
-            
-        }else if (Input.GetKey(KeyCode.RightArrow))
-        {
+        float horizontalAxis = Input.GetAxis("Horizontal");
+        float verticalAxis = Input.GetAxis("Vertical");
 
-        }
-	}
+        transform.Translate(Time.deltaTime * horizontalAxis * 5, 0, 0);
+        //Vertical movement is just for debugging
+        transform.Translate(0, Time.deltaTime * verticalAxis * 5, 0);
+
+    }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        Debug.Log("Collide");
+
+        string otherTag = collision.gameObject.tag;
+        if (otherTag == "Enemy")
+        {
+            gm.AddStamina(-collision.gameObject.GetComponent<EnemyControl>().GetDamage());
+            Destroy(collision.gameObject);
+        }   
              
     }
 
